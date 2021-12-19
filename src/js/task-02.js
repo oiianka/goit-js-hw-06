@@ -21,8 +21,6 @@ const ingredients = [
 
 const ul = document.querySelector("#ingredients");
 
-
-
 for (const ingredient of ingredients) {
   const createItem = document.createElement('li');
   createItem.textContent = ingredient;
