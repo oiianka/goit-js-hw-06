@@ -18,13 +18,16 @@
 const body = document.body;
 
 const mainListByTagName = body.querySelectorAll(".item");
+
+
 console.log("Number of categories:", mainListByTagName.length);
 
-const headers = body.querySelectorAll("h2");
+for (let elem of mainListByTagName) {
+	console.log(`\nCategory: ${elem.querySelector("h2").textContent}`);
+	console.log(
+		`Elements: ${elem.querySelector("ul").querySelectorAll("li").length}`
+	);
+}
 
-console.log("Category: ", headers[0].textContent);
-console.log("Elements:", headers[0].nextElementSibling.children.length)
-console.log("Category: ", headers[1].textContent);
-console.log("Elements:", headers[1].nextElementSibling.children.length)
-console.log("Category: ", headers[2].textContent);
-console.log("Elements:", headers[2].nextElementSibling.children.length)
+
+

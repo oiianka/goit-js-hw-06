@@ -9,19 +9,26 @@
 // Для добавления стилей, используй CSS-классы valid и invalid, 
 // которые мы уже добавили в исходные файлы задания.
 
+
+
 const inputForm = document.querySelector('#validation-input');
 const dataLength = inputForm.getAttribute("data-length");
 
-// console.log(dataLength);
 
-  inputForm.addEventListener("blur", function (event) {
-    if (inputForm.value.length == dataLength) {
-        // console.log('ok');
-        inputForm.classList.remove('invalid');
-        inputForm.classList.add('valid');
-    } else {
-    //  console.log('not ok');
-     inputForm.classList.remove('valid');
-     inputForm.classList.add('invalid');
-    }
-  });
+// // console.log(dataLength);
+
+
+const checkInput = () => {
+	if (inputForm.value.length === +dataLength) {
+		switchClass(inputForm, "valid", "invalid");
+	} else {
+		switchClass(inputForm, "invalid", "valid");
+	}
+};
+
+const switchClass = function (objLink, classAdd, classRemove) {
+	objLink.classList.remove(classRemove);
+	objLink.classList.add(classAdd);
+};
+
+inputForm.addEventListener("blur", checkInput);
