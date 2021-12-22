@@ -22,15 +22,16 @@ const ingredients = [
 const ul = document.querySelector("#ingredients");
 const createItems = [];
 
+
+
 for (const ingredient of ingredients) {
   const createItem = document.createElement('li');
   createItem.textContent = ingredient;
   createItem.setAttribute('class', 'item');
   // console.log(createItem);
   createItems.push(createItem);
-  ul.append(...createItems);
+  
   };
-
- 
+  ul.append(...createItems);
 
   
